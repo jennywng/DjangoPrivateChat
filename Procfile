@@ -1,1 +1,1 @@
-web: gunicorn PrivateChat.wsgi
+web: gunicorn PrivateChat.wsgi --log-file -
