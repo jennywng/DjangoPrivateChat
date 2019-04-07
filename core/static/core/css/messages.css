@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+/*var(green, #86BB71)*/
+
+/*$green: #86BB71;*/
+/*$blue: #94C2ED;*/
+/*$orange: #E38968;*/
+/*$gray: #92959E;*/
+
+:root {
+    --green: #86BB71;
+    --blue: #94C2ED;
+    --orange: #E38968;
+    --gray: #92959E;
+}
+
+.messages {
+    overflow-y: scroll;
+}
+
+
+.message-data {
+    color: gray;
+    margin-bottom: 15px
+}
+
+.message-data-time {
+    color: gray;
+    padding-left: 6px;
+}
+
+.message {
+    color: white;
+    padding: 18px 20px;
+    line-height: 26px;
+    font-size: 16px;
+    border-radius: 7px;
+    margin-bottom: 30px;
+    width: 90%;
+    position: relative;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.message::after {
+    bottom: 100%;
+    left: 7%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: var(--green);
+    border-width: 10px;
+    margin-left: -10px;
+}
+
+.my-message {
+    background: var(--green);
+}
+
+.other-message {
+    background: var(--blue);
+}
+.other-message::after {
+    border-bottom-color: var(--blue);
+    left: 93%;
+}
