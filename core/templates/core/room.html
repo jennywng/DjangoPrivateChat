@@ -46,7 +46,6 @@
 				</div>
 				  <div class="card-body">
 					<div class="card messages" style="max-width: 70rem; max-height: 30rem;">
-						<div class="nano-content" id="oldmessages">
 							<ul>
 								{% for message in messages %}
 								{% if message.emitter != request.user %}
@@ -61,7 +60,7 @@
 								<li class="clearfix">
 									<div class="message-data float-right">
 										<span class="message-data-time">{{ message.date_message|format_date_chat }}</span>
-										<span class="message-data-name">{{ message.emitter }}</span> <i class="fa fa-circle me"></i>
+										<span class="message-data-name">{{ message.emitter.first_name }}</span>
 										<p class="message my-message float-right">{{ message.text }}</p>
 									</div>
 								</li>
@@ -69,12 +68,16 @@
 							{% empty %}
 								<div id="information"><h4 class="color-black">You and {{ user_visited.first_name }} have no messages or they have been deleted. start a chat now! :)</h4></div>
 							{% endfor %}
+								<li class="clearfix" id="newmessage">
+									<div class="message-data float-right">
+										<span class="message-data-time" id="new-message-time"></span>
+										<span class="message-data-name" id="new-message-name">{{ message.emitter.first_name }}</span>
+										<p class="message my-message float-right" id="new-message-text"></p>
+									</div>
+								</li>
 							</ul>
 
-							<div id="newmessage"></div>
 							<div id="alertvisualized" class="float-right txtvisualized"></div>
-						</div>
-
 					</div>
 
 				  </div>

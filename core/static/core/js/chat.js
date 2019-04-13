@@ -77,7 +77,13 @@ function send_message(){
 
             success : function(json) {
                 if (json != false){
-                    $('#newmessage').append("<div class='col-xs-12'><p class='msg-emitter pull-right' title="+ json[1] +">"+ json[0] +"</p></div>");
+                    // $('#newmessage').append("<div class='col-xs-12'><p class='msg-emitter pull-right' title="+ json[1] +">"+ json[0] +"</p></div>");
+                    // $('#new-message-name').text(json[0]);
+                    // console.log(json[0]);
+                    // console.log(json[1]);
+                    // console.log(json);
+                    $('#new-message-text').text(json[0]);
+                    $('#new-message-time').text(json[1]);
                     goToFinal();
                     $("#field").val('');
                     $("#alertvisualized").html("");
